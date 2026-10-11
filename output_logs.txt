@@ -1,0 +1,86 @@
+=================================================================
+FASHION-MNIST AUTOENCODER EXPERIMENT
+=================================================================
+Device: cpu
+Epochs: 8
+Training images: 12000
+Test images: 3000
+Image dimensions: 28 x 28 = 784 pixels
+
+EXPERIMENT 1 & 2: BOTTLENECK COMPARISON
+
+Training autoencoder with latent dimension 8
+Latent= 8 | Epoch 01/8 | Train MSE=0.097265
+Latent= 8 | Epoch 02/8 | Train MSE=0.047001
+Latent= 8 | Epoch 03/8 | Train MSE=0.036370
+Latent= 8 | Epoch 04/8 | Train MSE=0.031595
+Latent= 8 | Epoch 05/8 | Train MSE=0.027492
+Latent= 8 | Epoch 06/8 | Train MSE=0.025284
+Latent= 8 | Epoch 07/8 | Train MSE=0.023970
+Latent= 8 | Epoch 08/8 | Train MSE=0.023014
+Latent dimension: 8
+Test reconstruction MSE: 0.022270
+Dimensional compression ratio: 98.00:1
+
+Training autoencoder with latent dimension 32
+Latent=32 | Epoch 01/8 | Train MSE=0.098655
+Latent=32 | Epoch 02/8 | Train MSE=0.046952
+Latent=32 | Epoch 03/8 | Train MSE=0.037544
+Latent=32 | Epoch 04/8 | Train MSE=0.032648
+Latent=32 | Epoch 05/8 | Train MSE=0.028841
+Latent=32 | Epoch 06/8 | Train MSE=0.025923
+Latent=32 | Epoch 07/8 | Train MSE=0.024048
+Latent=32 | Epoch 08/8 | Train MSE=0.022892
+Latent dimension: 32
+Test reconstruction MSE: 0.022142
+Dimensional compression ratio: 24.50:1
+
+Training autoencoder with latent dimension 64
+Latent=64 | Epoch 01/8 | Train MSE=0.100677
+Latent=64 | Epoch 02/8 | Train MSE=0.050852
+Latent=64 | Epoch 03/8 | Train MSE=0.039713
+Latent=64 | Epoch 04/8 | Train MSE=0.035110
+Latent=64 | Epoch 05/8 | Train MSE=0.029808
+Latent=64 | Epoch 06/8 | Train MSE=0.027000
+Latent=64 | Epoch 07/8 | Train MSE=0.025456
+Latent=64 | Epoch 08/8 | Train MSE=0.024162
+Latent dimension: 64
+Test reconstruction MSE: 0.023849
+Dimensional compression ratio: 12.25:1
+
+BOTTLENECK COMPARISON RESULTS
+-----------------------------------------------------------------
+Latent      Test MSE            Compression Ratio   
+8           0.022270            98.00:1
+32          0.022142            24.50:1
+64          0.023849            12.25:1
+
+EXPERIMENT 3: DENOISING AUTOENCODER
+Gaussian noise standard deviation: 0.35
+Latent=32 | Epoch 01/8 | Train MSE=0.105771
+Latent=32 | Epoch 02/8 | Train MSE=0.062145
+Latent=32 | Epoch 03/8 | Train MSE=0.044035
+Latent=32 | Epoch 04/8 | Train MSE=0.038840
+Latent=32 | Epoch 05/8 | Train MSE=0.034748
+Latent=32 | Epoch 06/8 | Train MSE=0.031458
+Latent=32 | Epoch 07/8 | Train MSE=0.028948
+Latent=32 | Epoch 08/8 | Train MSE=0.027176
+Denoising test MSE: 0.026457
+
+OPTIONAL EXPERIMENT: L2 REGULARIZATION
+Latent=32 | Epoch 01/8 | Train MSE=0.106467
+Latent=32 | Epoch 02/8 | Train MSE=0.055716
+Latent=32 | Epoch 03/8 | Train MSE=0.041490
+Latent=32 | Epoch 04/8 | Train MSE=0.037277
+Latent=32 | Epoch 05/8 | Train MSE=0.034032
+Latent=32 | Epoch 06/8 | Train MSE=0.033215
+Latent=32 | Epoch 07/8 | Train MSE=0.031636
+Latent=32 | Epoch 08/8 | Train MSE=0.030854
+Regularized model test MSE: 0.029750
+
+FINAL SUMMARY
+=================================================================
+Latent 8: MSE=0.022270, compression=98.00:1
+Latent 32: MSE=0.022142, compression=24.50:1
+Latent 64: MSE=0.023849, compression=12.25:1
+Denoising test MSE: 0.026457
